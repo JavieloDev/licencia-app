@@ -1,0 +1,379 @@
+import {Component} from '@angular/core';
+import {NgForOf, NgIf} from '@angular/common';
+
+interface Pregunta {
+  id: number;
+  texto: string;
+  opciones: string[];
+  correcta: number;
+  valor: number;
+  imagen?: string;
+}
+
+@Component({
+  selector: 'app-examen-6',
+  imports: [
+    NgIf,
+    NgForOf
+  ],
+  templateUrl: './examen-6.html',
+  styleUrl: './examen-6.css',
+  standalone: true
+})
+export class Examen6 {
+  preguntas: Pregunta[] = [
+    {
+      id: 1,
+      texto: 'Le está permitido, de acuerdo con las circunstancias que se observan en la señal, a:',
+      opciones: [
+        'Acceso prohibido.',
+        'Circulación prohibida.',
+        'Circulación prohibida a todo tipo de vehículo de motor.'
+      ],
+      correcta: 1, // Inciso B - Circulación prohibida
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.1.jpg'
+    },
+    {
+      id: 2,
+      texto: 'Cuando se observa esta señal ¿Se permite el adelantamiento?',
+      opciones: [
+        'Nunca, para ningún vehículo de motor, excepto los ciclos y las motocicletas de 2 ruedas.',
+        'Sólo a los vehículos de carga y pasajeros.',
+        'Sólo a los vehículos que circulan por debajo del límite máximo de velocidad permitido.'
+      ],
+      correcta: 0, // Inciso A - Nunca, excepto ciclos y motocicletas
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.2.jpg'
+    },
+    {
+      id: 3,
+      texto: 'La señal que se relaciona pertenece al grupo de Prioridad, la cual indica:',
+      opciones: [
+        'Disminuir la marcha y continuar.',
+        'Que está obligado a detenerse en la línea de Pare.',
+        'Sólo a los vehículos que circulan por debajo del límite máximo de velocidad permitido.'
+      ],
+      correcta: 1, // Inciso B - Detenerse en la línea de Pare
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.3.jpg'
+    },
+    {
+      id: 4,
+      texto: 'Se prohíbe a los peatones al circular por una vía:',
+      opciones: [
+        'Cruzar una vía urbana o rural entre vehículos estacionados.',
+        'Caminar por el lado derecho de la dirección en que transmite en vías urbanas.',
+        'Circular lo más próximo posible al contén de la acera o borde de la misma.'
+      ],
+      correcta: 0, // Inciso A - Cruzar entre vehículos estacionados
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.4.jpg'
+    },
+    {
+      id: 5,
+      texto: 'Un vehículo de motor capaz de alcanzar una velocidad superior a 25 Km/h, debe estar provisto en la parte posterior de:',
+      opciones: [
+        'Dos luces de frenado de color rojo cuya intensidad sea superior a las de posición trasera.',
+        'Luz corta o de cruce que pueda alumbrar con eficiencia la vía.',
+        'Luces cortas y largas que puedan alumbrar con eficiencia la vía.'
+      ],
+      correcta: 0, // Inciso A - Dos luces de frenado rojo
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.5.jpg'
+    },
+    {
+      id: 6,
+      texto: 'Se prohíbe la circulación de vehículos cuando:',
+      opciones: [
+        'La carga útil está comprendida entre 20 y 25 Toneladas Métricas de peso, para vehículos rígidos.',
+        'La carga útil exceda de 30 Toneladas métricas, en casos de vehículos rígidos y articulados.',
+        'La carga útil sea inferior a 25 Toneladas Métricas, en el caso de vehículos articulados.'
+      ],
+      correcta: 1, // Inciso B - Exceda de 30 Toneladas
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.6.jpg'
+    },
+    {
+      id: 7,
+      texto: 'Como norma general, está prohibido adelantar en:',
+      opciones: [
+        'En pasos peatonales.',
+        'En las curvas de visibilidad reducida.',
+        'En los caminos de tierra o terraplén.'
+      ],
+      correcta: 1, // Inciso B - Curvas de visibilidad reducida
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.7.jpg'
+    },
+    {
+      id: 8,
+      texto: 'A los conductores de ciclos se les prohíbe transitar en:',
+      opciones: [
+        'En vías de doble sentido de circulación.',
+        'A 1.50 metros de acera o borde de la calzada.',
+        'Conversando con otro conductor.'
+      ],
+      correcta: 2, // Inciso C - Conversando con otro conductor
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.8.jpg'
+    },
+    {
+      id: 9,
+      texto: 'La caja de cambio de velocidad de un vehículo se utiliza para:',
+      opciones: [
+        'Liberar el movimiento del motor de la transmisión.',
+        'Trasmitir el movimiento del motor al embrague.',
+        'Trasmitir mayor o menor velocidad de giros al árbol de transmisión.'
+      ],
+      correcta: 2, // Inciso C - Transmitir mayor o menor velocidad
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.9.jpg'
+    },
+    {
+      id: 10,
+      texto: 'Se prohíbe al poseedor legal o persona encargada, por cualquier concepto, conducir un vehículo o permitir que otro conduzca:',
+      opciones: [
+        'Cualquier vehículo de transporte público de pasajeros, portando la Licencia de Conducción con categoría D.',
+        'Cualquier vehículo de uso personal cuando haya ingerido bebidas alcohólicas en cualquier cantidad.',
+        'Portando el permiso de aprendizaje, acompañado por un titular de Licencia de Conducción de la categoría a la que aspira.'
+      ],
+      correcta: 1, // Inciso B - Ingerido bebidas alcohólicas
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.10.jpg'
+    },
+    {
+      id: 11,
+      texto: '¿Cómo se llama el mecanismo que regulan la entrada y salida de los gases en los cilindros del motor?',
+      opciones: [
+        'Sistema de encendido.',
+        'Sistema de distribución.',
+        'Sistema de Gasificadores.'
+      ],
+      correcta: 1, // Inciso B - Sistema de distribución
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.11.jpg'
+    },
+    {
+      id: 12,
+      texto: '¿En un vehículo de motor cuales son las ruedas directrices?',
+      opciones: [
+        'Las ruedas delanteras que son las que dirigen como conduce el conductor.',
+        'Las ruedas que reciben la señal del motor.',
+        'Son las ruedas traseras.'
+      ],
+      correcta: 0, // Inciso A - Ruedas delanteras
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.12.jpg'
+    },
+    {
+      id: 13,
+      texto: 'Los cuatro tiempos del motor son:',
+      opciones: [
+        'Lubricación, enfriamiento, alimentación y escape.',
+        'Admisión, Compresión, Explosión o Fuerza y escape.',
+        'Combustión, compresión, admisión y expansión.'
+      ],
+      correcta: 1, // Inciso B - Admisión, Compresión, Explosión, Escape
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.13.jpg'
+    },
+    {
+      id: 14,
+      texto: 'De las siguientes piezas ¿Diga cuál pertenece al sistema eléctrico?',
+      opciones: [
+        'Radiador.',
+        'Bielas.',
+        'Condensador.'
+      ],
+      correcta: 2, // Inciso C - Condensador
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.14.jpg'
+    },
+    {
+      id: 15,
+      texto: 'De las siguientes deficiencias técnicas diga por cuál no pueden circular los vehículos por las vías del país:',
+      opciones: [
+        'Cuando falte el limpiaparabrisas.',
+        'Cuando existan salideros de aceite del motor.',
+        'Cuando el juego libre del timón sea más de 25 grados.'
+      ],
+      correcta: 2, // Inciso C - Juego del timón más de 25 grados
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.15.jpg'
+    },
+    {
+      id: 16,
+      texto: 'De las siguientes deficiencias técnicas diga por cuál no puede circular un vehículo por las vías del país:',
+      opciones: [
+        'Cuando falta el tubo de escape con su dispositivo de silenciador.',
+        'Cuando exista salidero de aceite por el motor.',
+        'Cuando el parabrisa esté rajado.'
+      ],
+      correcta: 0, // Inciso A - Falta el tubo de escape
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.16.jpg'
+    },
+    {
+      id: 17,
+      texto: 'La doble línea continua en el pavimento significa:',
+      opciones: [
+        'Que existe menor peligrosidad.',
+        'Que la misma está próxima a continuar en una línea continua.',
+        'Que ningún vehículo podrá cruzarla ni circular sobre ella.'
+      ],
+      correcta: 2, // Inciso C - No cruzarla ni circular sobre ella
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.17.jpg'
+    },
+    {
+      id: 18,
+      texto: 'El que conduzca cualquier vehículo, de uso personal está obligado a mantener concentrada toda la atención en su control y dirección, por lo que se prohíbe:',
+      opciones: [
+        'Entablar conversación con otra persona mientras conduce.',
+        'Utilizar teléfonos u otros medios de comunicación mientras que el vehículo este en marcha.',
+        'Mantener más de 5 metros de distancia por cada 15 Km/h de velocidad entre vehículos.'
+      ],
+      correcta: 1, // Inciso B - Utilizar teléfonos
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.18.jpg'
+    },
+    {
+      id: 19,
+      texto: 'La señal que se relaciona indica:',
+      opciones: [
+        'El cruce con preferencia.',
+        'La proximidad de un paso a nivel sin barreras.',
+        'Que la vía tiene preferencia en los cruces respecto a las demás vías que la atraviesan.'
+      ],
+      correcta: 2, // Inciso C - Vía con preferencia
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.19.jpg'
+    },
+    {
+      id: 20,
+      texto: 'Un toque corto, del silbato, emitido por un agente del Orden Público indica:',
+      opciones: [
+        'Que puede reanudar la marcha.',
+        'Que deben detener la marcha.',
+        'Que debe disminuir la velocidad.'
+      ],
+      correcta: 0, // Inciso A - Reanudar la marcha
+      valor: 5,
+      imagen: 'assets/images/examen-6/6.20.jpg'
+    }
+  ];
+
+  imagenesApoyo: string[] = [
+    'assets/images/examen-6/6.1.jpg',
+    'assets/images/examen-6/6.2.jpg',
+    'assets/images/examen-6/6.3.jpg',
+    'assets/images/examen-6/6.4.jpg',
+    'assets/images/examen-6/6.5.jpg',
+    'assets/images/examen-6/6.6.jpg',
+    'assets/images/examen-6/6.7.jpg',
+    'assets/images/examen-6/6.8.jpg',
+    'assets/images/examen-6/6.9.jpg',
+    'assets/images/examen-6/6.10.jpg',
+    'assets/images/examen-6/6.11.jpg',
+    'assets/images/examen-6/6.12.jpg',
+    'assets/images/examen-6/6.13.jpg',
+    'assets/images/examen-6/6.14.jpg',
+    'assets/images/examen-6/6.15.jpg',
+    'assets/images/examen-6/6.16.jpg',
+    'assets/images/examen-6/6.17.jpg',
+    'assets/images/examen-6/6.18.jpg',
+    'assets/images/examen-6/6.19.jpg',
+    'assets/images/examen-6/6.20.jpg'
+  ];
+
+  resultado: number | null = null;
+  resultadoTexto: string = '';
+  examenRevisado: boolean = false;
+  respuestasUsuario: { [key: number]: number } = {};
+  mostrarImagenes: boolean = true;
+  currentYear: number = new Date().getFullYear();
+
+  constructor() {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      this.mostrarImagenes = false;
+    }
+  }
+
+  toggleImagenes(): void {
+    this.mostrarImagenes = !this.mostrarImagenes;
+  }
+
+  seleccionarRespuesta(preguntaId: number, opcionIndex: number): void {
+    this.respuestasUsuario[preguntaId] = opcionIndex;
+  }
+
+  verResultado(): void {
+    const preguntasFaltantes: number[] = [];
+    for (let i = 1; i <= 20; i++) {
+      if (this.respuestasUsuario[i] === undefined) {
+        preguntasFaltantes.push(i);
+      }
+    }
+
+    let total = 0;
+    this.preguntas.forEach(pregunta => {
+      const respuestaUsuario = this.respuestasUsuario[pregunta.id];
+      if (respuestaUsuario !== undefined && respuestaUsuario === pregunta.correcta) {
+        total += pregunta.valor;
+      }
+    });
+
+    this.resultado = total;
+
+    if (preguntasFaltantes.length > 0) {
+      alert(`⚠️ Preguntas no contestadas: ${preguntasFaltantes.join(', ')} - Valen 0 puntos`);
+    }
+
+    if (total >= 70) {
+      this.resultadoTexto = `✅ Usted ha Aprobado el Examen con ${total} Puntos`;
+      alert('🎉 Felicitaciones, ha aprobado el examen. Le recomendamos que si conduce en la vía pública aplique estos conocimientos.');
+    } else {
+      this.resultadoTexto = `❌ Usted ha Suspendido este Examen con ${total} Puntos`;
+      alert(`📚 No ha alcanzado los 70 puntos. Obtuvo ${total} puntos. Siga estudiando.`);
+    }
+  }
+
+  revisarExamen(): void {
+    if (this.resultado === null) {
+      this.verResultado();
+    }
+    this.examenRevisado = true;
+  }
+
+  cerrarRevision(): void {
+    this.examenRevisado = false;
+  }
+
+  getPuntajePregunta(preguntaId: number): number {
+    const pregunta = this.preguntas.find(p => p.id === preguntaId);
+    if (pregunta && this.respuestasUsuario[preguntaId] !== undefined &&
+      this.respuestasUsuario[preguntaId] === pregunta.correcta) {
+      return pregunta.valor;
+    }
+    return 0;
+  }
+
+  reiniciarExamen(): void {
+    if (confirm('¿Estás seguro de que deseas reiniciar el examen?')) {
+      this.respuestasUsuario = {};
+      this.resultado = null;
+      this.resultadoTexto = '';
+      this.examenRevisado = false;
+    }
+  }
+
+  onImageError(event: any): void {
+    console.error('Error cargando imagen:', event.target.src);
+    event.target.src = 'assets/images/placeholder.jpg';
+  }
+
+  getLetraRespuesta(index: number): string {
+    return index === 0 ? 'A' : index === 1 ? 'B' : 'C';
+  }
+}

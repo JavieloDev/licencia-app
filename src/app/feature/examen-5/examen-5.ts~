@@ -1,0 +1,378 @@
+import {Component} from '@angular/core';
+import {NgForOf, NgIf} from '@angular/common';
+
+interface Pregunta {
+  id: number;
+  texto: string;
+  opciones: string[];
+  correcta: number;
+  valor: number;
+  imagen?: string; // Imagen específica para esta pregunta
+}
+
+@Component({
+  selector: 'app-examen-5',
+  imports: [
+    NgForOf,
+    NgIf
+  ],
+  templateUrl: './examen-5.html',
+  styleUrl: './examen-5.css',
+  standalone: true
+})
+export class Examen5 {
+  preguntas: Pregunta[] = [
+    {
+      id: 1,
+      texto: 'Esta señal indica:',
+      opciones: [
+        'La proximidad de una curva hacia el lado derecho del sentido de la circulación.',
+        'Proximidad de una curva hacia el lado izquierdo del sentido de la circulación.',
+        'Doble curva a la derecha.'
+      ],
+      correcta: 1, // Inciso B - Proximidad de una curva hacia el lado izquierdo
+      valor: 5,
+      imagen: 'assets/images/examen-5/5.1.jpg'
+    },
+    {
+      id: 2,
+      texto: 'Al llegar a una intersección encuentra a su derecha una señal de PARE y un semáforo proyectando la luz verde. ¿Qué debe hacer?',
+      opciones: [
+        'Los conductores de vehículos pueden continuar la marcha por la vía en que circulan, porque la luz exime de cumplir la señal vertical.',
+        'Detenerme y ceder el paso a los vehículos que circulan por la vía transversal.',
+        'Circular con precaución y detenerme sólo si tengo que ceder el paso a los vehículos que circulen por la vía transversal.'
+      ],
+      correcta: 0, // Inciso A - Continuar la marcha
+      valor: 5,
+      imagen: 'C5P2.jpg'
+    },
+    {
+      id: 3,
+      texto: 'Para advertir al conductor de un vehículo que circula delante, su intención de adelantarle, usted realiza una señal lumínica:',
+      opciones: [
+        'Accionando de forma intermitente las luces corta y larga, alternativamente.',
+        'Con la luz direccional e intermitente izquierda.',
+        'Con la luz de cruce corta.'
+      ],
+      correcta: 0, // Inciso A - Luces corta y larga alternativamente
+      valor: 5,
+      imagen: 'C5P3.jpg'
+    },
+    {
+      id: 4,
+      texto: 'En caso de niebla densa. Usted está obligado a:',
+      opciones: [
+        'Aumentar la distancia segura de frenado.',
+        'Moderar la marcha y detenerla si fuera necesario.',
+        'Utilizar las luces de niebla o las de cruce o cortas.'
+      ],
+      correcta: 2, // Inciso C - Utilizar luces de niebla o cruce
+      valor: 5,
+      imagen: 'C5P4.jpg'
+    },
+    {
+      id: 5,
+      texto: 'Conduciendo durante la noche por una zona rural utilizará las luces de carreteras o largas:',
+      opciones: [
+        'Durante todo el trayecto.',
+        'Siempre que no causen deslumbramiento a los conductores de vehículos que circulan en sentido contrario.',
+        'En casos de niebla densa o lluvia intensa.'
+      ],
+      correcta: 1, // Inciso B - Siempre que no causen deslumbramiento
+      valor: 5,
+      imagen: 'C5P5.jpg'
+    },
+    {
+      id: 6,
+      texto: 'Para circular por la vía con seguridad, durante las horas comprendidas del anochecer al amanecer, las luces de cruce o cortas de los vehículos de motor deben alumbrar la vía con eficacia hasta una distancia por delante del vehículo no menor de:',
+      opciones: [
+        '60 metros por delante del vehículo.',
+        '40 metros por delante del vehículo.',
+        '50 metros por delante del vehículo.'
+      ],
+      correcta: 0, // Inciso A - 60 metros
+      valor: 5,
+      imagen: 'C5P6.jpg'
+    },
+    {
+      id: 7,
+      texto: 'Todo automóvil capaz de alcanzar una velocidad superior a los 40 Km/horas debe estar provisto de dos luces de carretera o larga que puedan alumbrar con eficacia la vía hasta una distancia, por delante del vehículo, no menor de:',
+      opciones: [
+        '80 metros.',
+        '90 metros.',
+        '100 metros.'
+      ],
+      correcta: 2, // Inciso C - 100 metros
+      valor: 5,
+      imagen: 'C5P7.jpg'
+    },
+    {
+      id: 8,
+      texto: 'Circula usted por una vía urbana con su automóvil, a la velocidad de:',
+      opciones: [
+        '50 km/h.',
+        '70 km/h.',
+        '100 km/h.'
+      ],
+      correcta: 0, // Inciso A - 50 km/h
+      valor: 5,
+      imagen: 'C5P8.jpg'
+    },
+    {
+      id: 9,
+      texto: 'Circula usted en carretera con su automóvil con un peso máximo de hasta 3500 kilogramos y debe conducir a:',
+      opciones: [
+        '50 km/h.',
+        '90 km/h.',
+        '100 km/h.'
+      ],
+      correcta: 1, // Inciso B - 90 km/h
+      valor: 5,
+      imagen: 'C5P9.jpg'
+    },
+    {
+      id: 10,
+      texto: 'Cuando usted conduce por un túnel suficientemente alumbrado. ¿Es necesario encender las luces?',
+      opciones: [
+        'Sí, debo encender las luces de cruce o cortas o de posición.',
+        'No, porque con la iluminación de la vía es suficiente.',
+        'Sí, solo las de posición, para advertir mi presencia.'
+      ],
+      correcta: 0, // Inciso A - Sí, encender luces
+      valor: 5,
+      imagen: 'C5P10.jpg'
+    },
+    {
+      id: 11,
+      texto: 'Los poseedores legales de vehículos quedan obligados a comunicar al registro, dentro de los 10 días siguientes de haberse realizado:',
+      opciones: [
+        'La Reinscripción.',
+        'El cambio de chapas.',
+        'El cambio de color del vehículo.'
+      ],
+      correcta: 2, // Inciso C - Cambio de color
+      valor: 5,
+      imagen: 'C5P11.jpg'
+    },
+    {
+      id: 12,
+      texto: 'Usted como conductor de cualquier vehículo de motor, para efectuar la maniobra de giro o cambio de carril o senda a la izquierda, deberá tener presente:',
+      opciones: [
+        'Accionar las luces direccionales e intermitentes a la izquierda o sacar el brazo y extenderlo en posición horizontal.',
+        'Accionar las luces direccionales e intermitentes a la izquierda y sacar el brazo en posición vertical hacia arriba con la palma de la mano hacia atrás.',
+        'Accionar las luces direccionales e intermitentes a la izquierda y sacar el brazo manteniéndolo en posición inclinada hacia abajo con la palma de la mano hacia atrás.'
+      ],
+      correcta: 0, // Inciso A - Brazo en posición horizontal
+      valor: 5,
+      imagen: 'C5P12.jpg'
+    },
+    {
+      id: 13,
+      texto: 'Un ciudadano se presenta a las oficinas Licencia de Conducción con el objetivo de obtener la licencia de conducción categoría D, el mismo no es titular de licencia de ninguna categoría. ¿Podrá cumplir la pretensión el aspirante?',
+      opciones: [
+        'Sí, porque es su voluntad conducir ese tipo de vehículo.',
+        'No, porque no tiene los conocimientos necesarios para conducir camiones.',
+        'No, porque debe ser titular de una licencia de conducción de la categoría B y tener 2 años de experiencia en la misma.'
+      ],
+      correcta: 2, // Inciso C - Requisitos categoría D
+      valor: 5,
+      imagen: 'C5P133.jpg'
+    },
+    {
+      id: 14,
+      texto: 'El estacionamiento o parqueo de un vehículo podrá realizarse:',
+      opciones: [
+        'A una distancia no menor de 50 cm. de otro vehículo.',
+        'A una distancia mayor de 20 cm. del contén.',
+        'En salidas de garajes.'
+      ],
+      correcta: 0, // Inciso A - 50 cm de otro vehículo
+      valor: 5,
+      imagen: 'C5P14.jpg'
+    },
+    {
+      id: 15,
+      texto: 'El conductor de un vehículo al estacionarlo o parquearlo en las vías autorizadas, esta obligado a:',
+      opciones: [
+        'Medir la presión de inflado de los neumáticos.',
+        'Parar el motor del vehículo cerrando el chucho o interruptor.',
+        'Estacionarlo entre una zona de seguridad y la acera.'
+      ],
+      correcta: 1, // Inciso B - Parar el motor
+      valor: 5,
+      imagen: 'C5P15.jpg'
+    },
+    {
+      id: 16,
+      texto: 'Transitando usted por una carretera, conduciendo un vehículo rígido o articulado, destinado al transporte de carga, la velocidad que podrá desarrollar en su desplazamiento no excederá:',
+      opciones: [
+        '80 km/h.',
+        '90 km/h.',
+        '100 km/h.'
+      ],
+      correcta: 0, // Inciso A - 80 km/h
+      valor: 5,
+      imagen: 'C5P16.jpg'
+    },
+    {
+      id: 17,
+      texto: 'En vías urbanas de un solo sentido de circulación el estacionamiento o parqueo se efectuará:',
+      opciones: [
+        'Del lado derecho de la vía.',
+        'Del lado izquierdo de la vía.',
+        'En ambos sentidos de dirección.'
+      ],
+      correcta: 1, // Inciso B - Lado izquierdo
+      valor: 5,
+      imagen: 'C5P177.JPG'
+    },
+    {
+      id: 18,
+      texto: 'De noche, dentro de perímetros urbanos, ¿Está permitido utilizar la luz larga o de carretera?',
+      opciones: [
+        'Sí, pero únicamente cuando circule a más de 40 km/h y la vía no esté iluminada.',
+        'Sí, cuando la vía esté suficientemente iluminada.',
+        'No, sólo pueden utilizarse cuando haya inutilización, deficiencia o avería del alumbrado.'
+      ],
+      correcta: 2, // Inciso C - No, solo en averías
+      valor: 5,
+      imagen: 'C5P18.jpg'
+    },
+    {
+      id: 19,
+      texto: 'Conduciendo usted por una autopista, un automóvil que no excede en su peso los 3500 Kg, la velocidad que puede alcanzar con su vehículo no será superior a:',
+      opciones: [
+        '100 km/h.',
+        '90 km/h.',
+        '80 km/h.'
+      ],
+      correcta: 0, // Inciso A - 100 km/h
+      valor: 5,
+      imagen: 'C5P19.jpg'
+    },
+    {
+      id: 20,
+      texto: 'Circula usted con un equipo especializado para la construcción, tractores y otros equipos agrícolas y debe conducir a:',
+      opciones: [
+        '70 km/h.',
+        '20 km/h.',
+        '90 km/h.'
+      ],
+      correcta: 1, // Inciso B - 20 km/h
+      valor: 5,
+      imagen: 'C5P20.jpg'
+    }
+  ];
+
+  imagenesApoyo: string[] = [
+    'C5P1.jpg',
+    'C5P2.jpg',
+    'C5P3.jpg',
+    'C5P4.jpg',
+    'C5P5.jpg',
+    'C5P6.jpg',
+    'C5P7.jpg',
+    'C5P8.jpg',
+    'C5P9.jpg',
+    'C5P10.jpg',
+    'C5P11.jpg',
+    'C5P12.jpg',
+    'C5P133.jpg',
+    'C5P14.jpg',
+    'C5P15.jpg',
+    'C5P16.jpg',
+    'C5P177.JPG',
+    'C5P18.jpg',
+    'C5P19.jpg',
+    'C5P20.jpg'
+  ];
+
+  resultado: number | null = null;
+  resultadoTexto: string = '';
+  examenRevisado: boolean = false;
+  respuestasUsuario: { [key: number]: number } = {};
+  mostrarImagenes: boolean = true;
+  currentYear: number = new Date().getFullYear();
+
+  constructor() {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      this.mostrarImagenes = false;
+    }
+  }
+
+  toggleImagenes(): void {
+    this.mostrarImagenes = !this.mostrarImagenes;
+  }
+
+  seleccionarRespuesta(preguntaId: number, opcionIndex: number): void {
+    this.respuestasUsuario[preguntaId] = opcionIndex;
+  }
+
+  verResultado(): void {
+    const preguntasFaltantes: number[] = [];
+    for (let i = 1; i <= 20; i++) {
+      if (this.respuestasUsuario[i] === undefined) {
+        preguntasFaltantes.push(i);
+      }
+    }
+
+    let total = 0;
+    this.preguntas.forEach(pregunta => {
+      const respuestaUsuario = this.respuestasUsuario[pregunta.id];
+      if (respuestaUsuario !== undefined && respuestaUsuario === pregunta.correcta) {
+        total += pregunta.valor;
+      }
+    });
+
+    this.resultado = total;
+
+    if (preguntasFaltantes.length > 0) {
+      alert(`⚠️ Preguntas no contestadas: ${preguntasFaltantes.join(', ')} - Valen 0 puntos`);
+    }
+
+    if (total >= 70) {
+      this.resultadoTexto = `✅ Usted ha Aprobado el Examen con ${total} Puntos`;
+      alert('🎉 Felicitaciones, ha aprobado el examen. Le recomendamos que si conduce en la vía pública aplique estos conocimientos.');
+    } else {
+      this.resultadoTexto = `❌ Usted ha Suspendido este Examen con ${total} Puntos`;
+      alert(`📚 No ha alcanzado los 70 puntos. Obtuvo ${total} puntos. Siga estudiando.`);
+    }
+  }
+
+  revisarExamen(): void {
+    if (this.resultado === null) {
+      this.verResultado();
+    }
+    this.examenRevisado = true;
+  }
+
+  cerrarRevision(): void {
+    this.examenRevisado = false;
+  }
+
+  getPuntajePregunta(preguntaId: number): number {
+    const pregunta = this.preguntas.find(p => p.id === preguntaId);
+    if (pregunta && this.respuestasUsuario[preguntaId] !== undefined &&
+      this.respuestasUsuario[preguntaId] === pregunta.correcta) {
+      return pregunta.valor;
+    }
+    return 0;
+  }
+
+  reiniciarExamen(): void {
+    if (confirm('¿Estás seguro de que deseas reiniciar el examen?')) {
+      this.respuestasUsuario = {};
+      this.resultado = null;
+      this.resultadoTexto = '';
+      this.examenRevisado = false;
+    }
+  }
+
+  onImageError(event: any): void {
+    event.target.src = 'assets/images/placeholder.jpg';
+  }
+
+  getLetraRespuesta(index: number): string {
+    return index === 0 ? 'A' : index === 1 ? 'B' : 'C';
+  }
+}

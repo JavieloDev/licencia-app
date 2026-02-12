@@ -1,0 +1,21 @@
+import {Routes} from '@angular/router';
+import {Home} from './home';
+import {Examen1} from '../examen-1/examen-1';
+import {Examen2} from '../examen-2/examen-2';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: Home,
+    children: [
+      {
+        path: 'examen-1',
+        component: Examen1,
+      },
+      {
+        path: 'examen-2',
+        component: Examen2,
+      },
+    ],
+  },
+];

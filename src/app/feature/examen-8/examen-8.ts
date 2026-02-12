@@ -1,0 +1,356 @@
+import {Component} from '@angular/core';
+import {NgForOf, NgIf} from '@angular/common';
+
+interface Pregunta {
+  id: number;
+  texto: string;
+  opciones: string[];
+  correcta: number;
+  valor: number;
+  imagen?: string;
+}
+
+@Component({
+  selector: 'app-examen-8',
+  imports: [
+    NgIf,
+    NgForOf
+  ],
+  templateUrl: './examen-8.html',
+  styleUrl: './examen-8.css',
+  standalone: true
+})
+export class Examen8 {
+  preguntas: Pregunta[] = [
+    {
+      id: 1,
+      texto: 'Para estacionar su vehículo, en un lugar de la vía donde no esté prohibido hacerlo, usted tendrá en cuenta hacerlo:',
+      opciones: [
+        'Con las ruedas del vehículo a una distancia no mayor de 10 centímetros del contén o borde de la acera o de la calzada.',
+        'A una distancia entre 30 y 50 centímetros de otro vehículo.',
+        'Junto a la acera o borde derecho y en el sentido de la circulación en calzadas de una dirección.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.1.jpg'
+    },
+    {
+      id: 2,
+      texto: 'Al estacionar su vehículo en un lugar donde no exista prohibición para hacerlo, deberá efectuarlo:',
+      opciones: [
+        'Paralelo a la dirección de la circulación y junto a la acera y borde derecho de la calzada de dos direcciones.',
+        'Entre una zona de seguridad y la acera.',
+        'En el espacio de 20 metros hacia atrás y 10 metros hacia delante de la señal oficial de parada de ómnibus.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.2.jpg'
+    },
+    {
+      id: 3,
+      texto: 'Para estacionar su vehículo, usted debe tener en cuenta que el parqueo se prohíbe:',
+      opciones: [
+        'A una distancia de 50 centímetros o más de otro vehículo.',
+        'En el espacio comprendido de 20 metros hacia atrás y 10 metros hacia delante de la señal oficial de parada de ómnibus.',
+        'Con las ruedas del vehículo a una distancia de 10 centímetros o menos del contén de la acera o borde de la calzada.'
+      ],
+      correcta: 1, // Inciso B
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.3.jpg'
+    },
+    {
+      id: 4,
+      texto: 'Cuando usted pretenda estacionar su vehículo, debe conocer que el estacionamiento o parqueo se prohíbe hacerlo:',
+      opciones: [
+        'Junto a la acera o borde izquierdo y en el sentido de la circulación en calzadas de una dirección.',
+        'A una distancia no menor de 50 centímetros de otro vehículo.',
+        'En el espacio que comprende una zona de piquera de automóviles de alquiler los días y horas en que se preste este servicio.'
+      ],
+      correcta: 2, // Inciso C
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.4.jpg'
+    },
+    {
+      id: 5,
+      texto: 'Para estacionar su vehículo, paralelo al borde de la acera, en un lugar de la vía donde no exista prohibición para hacerlo, deberá realizarlo:',
+      opciones: [
+        'Sobre la acera, paseo o césped, siempre y cuando no exista otro espacio disponible para efectuarlo.',
+        'Junto a la acera o borde izquierdo de la vía y en el sentido de la circulación en calzadas de una dirección.',
+        'Frente a una distancia menor de cuatro metros, anterior y posterior, a un hidrante.'
+      ],
+      correcta: 1, // Inciso B
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.5.jpg'
+    },
+    {
+      id: 6,
+      texto: 'Usted, como conductor de un vehículo de motor, debe tener presente que el estacionamiento se prohíbe:',
+      opciones: [
+        'Frente a una distancia mayor de cuatro metros, anterior y posterior, de un hidrante.',
+        'A una distancia mayor de 50 centímetros de otro vehículo.',
+        'En la parte de la vía que circundan las islas o rotondas, situadas en la confluencia de las vías.'
+      ],
+      correcta: 2, // Inciso C
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.6.jpg'
+    },
+    {
+      id: 7,
+      texto: 'El estacionamiento o parqueo de vehículos en lugares no prohibidos de la vía debe efectuarse:',
+      opciones: [
+        'Con las ruedas del vehículo a una distancia no mayor de 10 centímetros del contén de la acera o borde de la calzada.',
+        'Entre dos zonas de seguridad.',
+        'En el espacio comprendido entre las dos líneas longitudinales continuas marcadas en el pavimento y que separan los sentidos de circulación.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.7.jpg'
+    },
+    {
+      id: 8,
+      texto: 'El estacionamiento o parqueo de vehículos en lugares no prohibidos de la vía debe efectuarse:',
+      opciones: [
+        'En acera, paseo o césped, siempre que no exista espacio disponible para hacerlo en la vía.',
+        'A una distancia no menor de 50 centímetros de otro vehículo.',
+        'Entre dos zonas de seguridad.'
+      ],
+      correcta: 1, // Inciso B
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.8.jpg'
+    },
+    {
+      id: 9,
+      texto: 'El estacionamiento o parqueo de vehículos se prohíbe:',
+      opciones: [
+        'En el espacio comprendido entre las dos líneas longitudinales continuas marcadas en el pavimento y que separan los sentidos de circulación, las que hacen función de separador central al no existir este físicamente.',
+        'A 70 centímetros de otro vehículo.',
+        'Junto a la acera o borde izquierdo y en el sentido de la circulación en calzadas de una dirección.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.9.jpg'
+    },
+    {
+      id: 10,
+      texto: 'El estacionamiento o parqueo de vehículos se prohíbe:',
+      opciones: [
+        'Paralela la dirección de la circulación y junto a la acera y borde de la derecha en calzadas de dos direcciones.',
+        'Frente a una distancia menor de cuatro metros, anterior y posterior, de un hidrante.',
+        'En el espacio de 20 metros hacia delante y 10 metros hacia atrás de la señal oficial de parada de ómnibus destinado al servicio de transporte público de pasajeros.'
+      ],
+      correcta: 1, // Inciso B
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.10.jpg'
+    },
+    {
+      id: 11,
+      texto: 'El estacionamiento o parqueo de vehículos en lugares no prohibidos de la vía puede efectuarse:',
+      opciones: [
+        'En el espacio a partir de 20 metros hacia delante y de 10 metros hacia atrás de la señal oficial de parada de ómnibus destinado al servicio público de pasajeros.',
+        'En la entrada o salida de garajes, pistas y rampas.',
+        'En zonas de carga, en las horas y días establecidos para las operaciones de carga y descarga, siempre que no dificulte u obstaculice dicha operación.'
+      ],
+      correcta: 2, // Inciso C
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.11.jpg'
+    },
+    {
+      id: 12,
+      texto: 'El estacionamiento o parqueo de vehículos se prohíbe:',
+      opciones: [
+        'Frente a la entrada principal de edificios públicos, aunque no obstruccione o dificulte la entrada o salida a estos.',
+        'En los puentes, intercambios, pasos a nivel, curvas de visibilidad reducida y en la proximidad de un cambio de rasante, aunque la detención es momentánea.',
+        'Frente a una distancia mayor de cuatro metros, anterior y posterior, de un hidrante.'
+      ],
+      correcta: 1, // Inciso B
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.12.jpg'
+    },
+    {
+      id: 13,
+      texto: 'Conduciendo por una vía de doble sentido de circulación, de dos carriles en cada uno de los sentidos, usted pretende adelantar al vehículo que circula delante del suyo. Para hacer la maniobra con seguridad, deberá tener en cuenta:',
+      opciones: [
+        'Efectuar el paso o adelantamiento por la senda izquierda.',
+        'Realizarlo por la senda de la derecha, cuando el vehículo a adelantar está circulando a una velocidad reducida.',
+        'Realizar la maniobra inmediatamente después de haber accionado las señales de luces direccionales o intermitentes.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.13.jpg'
+    },
+    {
+      id: 14,
+      texto: 'Circulando por una vía de un solo sentido de circulación, usted requiere incorporarse a una vía de doble sentido, en una intersección donde no existe señal que indica la prioridad de las vías. Para ello está obligado a:',
+      opciones: [
+        'Detener la marcha, cualesquiera que sean las condiciones de visibilidad.',
+        'Ceder el paso o detenerse si es necesario, ante el vehículo que se aproxima por la vía transversal.',
+        'Ceder el paso o detenerse si es necesario, ante el vehículo que por la vía transversal se aproxima por su lado derecho.'
+      ],
+      correcta: 2, // Inciso C
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.14.jpg'
+    },
+    {
+      id: 15,
+      texto: 'Conduciendo por una vía de doble sentido de circulación, decide detenerse con la intensión de recoger a una persona que le hace señas desde la acera. Para hacerlo con seguridad, usted está obligado a:',
+      opciones: [
+        'No emprender nuevamente la marcha cuando la persona haya terminado de subir y la puerta se encuentre debidamente cerrada.',
+        'Mantener el vehículo detenido por no menos de tres minutos.',
+        'Realizar la detención donde no exista prohibición de estacionamiento o parqueo, mediante la señal correspondiente.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.15.jpg'
+    },
+    {
+      id: 16,
+      texto: 'Circulando por una vía de un solo sentido de circulación, usted requiere realizar el cruce de otra vía con igual categoría, en una intersección donde no existe señal que indica la prioridad de las vías. Para ello está obligado a:',
+      opciones: [
+        'Disminuir la velocidad y parar si fuera necesario, a fin de permitir el paso a todos los vehículos que se aproximan por la vía transversal.',
+        'Ceder el paso o detenerse si es necesario, ante el vehículo que por la vía transversal se aproxima por su lado derecho.',
+        'Ceder el paso a los vehículos que se aproximan en sentido opuesto, por la misma vía.'
+      ],
+      correcta: 1, // Inciso B
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.16.jpg'
+    },
+    {
+      id: 17,
+      texto: 'Circulando por una vía de doble sentido de circulación, usted pretende doblar a la izquierda, para incorporarse a otra, en una intersección donde no existe señal que indica la prioridad de las vías. Para ello está obligado a:',
+      opciones: [
+        'Ceder el paso al vehículo que se aproxima por la senda o carril a la que pretende incorporarse.',
+        'Ceder el paso o detenerse si es necesario, ante el vehículo que por la vía transversal se aproxima por su lado izquierdo.',
+        'Ceder el paso a los vehículos que se aproximan en sentido opuesto por la misma vía.'
+      ],
+      correcta: 2, // Inciso C
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.17.jpg'
+    },
+    {
+      id: 18,
+      texto: 'Al circular, incorporarse o cruzar una vía, ante la señal de "Pare", como conductor de un vehículo está usted obligado a:',
+      opciones: [
+        'Detener la marcha cualesquiera que sean las condiciones de visibilidad, dándole prioridad a los vehículos que circulan por la vía transversal.',
+        'Detener la marcha cuando las condiciones de visibilidad no permita realizar la maniobra sin riesgo.',
+        'Disminuir la velocidad y parar si fuera necesario, a fin de permitir el paso a todos los vehículos que se aproximen por la vía transversal.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.18.jpg'
+    },
+    {
+      id: 19,
+      texto: 'Circulando en la corriente vehicular usted requiere adelantar al vehículo que circula delante. Para realizar la maniobra de adelantamiento usted está obligado a:',
+      opciones: [
+        'Comprobar que puede efectuarlo sin ninguna interferencia a los demás conductores de vehículos.',
+        'Realizar el adelantamiento por la senda de la derecha, cuando el vehículo a adelantar circula por debajo de la velocidad mínima obligatoria para la vía.',
+        'Realizar la maniobra una vez accionada las luces direccionales e intermitentes.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.19.jpg'
+    },
+    {
+      id: 20,
+      texto: 'Conduciendo por una vía de doble sentido de circulación, decide detenerse con la intensión de recoger a una persona que le hace señas desde la acera. Para hacerlo con seguridad, usted está obligado a:',
+      opciones: [
+        'Emprender nuevamente la marcha cuando la persona haya terminado de subir y la puerta se encuentre debidamente cerrada.',
+        'Mantener el vehículo detenido por no menos de tres minutos.',
+        'Realizar la detención donde no exista prohibición de estacionamiento o parqueo, mediante la señal correspondiente.'
+      ],
+      correcta: 0, // Inciso A
+      valor: 5,
+      imagen: 'assets/images/examen-8/8.20.jpg'
+    }
+  ];
+
+  resultado: number | null = null;
+  resultadoTexto: string = '';
+  examenRevisado: boolean = false;
+  respuestasUsuario: { [key: number]: number } = {};
+  mostrarImagenes: boolean = true;
+  currentYear: number = new Date().getFullYear();
+
+  constructor() {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      this.mostrarImagenes = false;
+    }
+  }
+
+  toggleImagenes(): void {
+    this.mostrarImagenes = !this.mostrarImagenes;
+  }
+
+  seleccionarRespuesta(preguntaId: number, opcionIndex: number): void {
+    this.respuestasUsuario[preguntaId] = opcionIndex;
+  }
+
+  verResultado(): void {
+    const preguntasFaltantes: number[] = [];
+    for (let i = 1; i <= 20; i++) {
+      if (this.respuestasUsuario[i] === undefined) {
+        preguntasFaltantes.push(i);
+      }
+    }
+
+    let total = 0;
+    this.preguntas.forEach(pregunta => {
+      const respuestaUsuario = this.respuestasUsuario[pregunta.id];
+      if (respuestaUsuario !== undefined && respuestaUsuario === pregunta.correcta) {
+        total += pregunta.valor;
+      }
+    });
+
+    this.resultado = total;
+
+    if (preguntasFaltantes.length > 0) {
+      alert(`⚠️ Preguntas no contestadas: ${preguntasFaltantes.join(', ')} - Valen 0 puntos`);
+    }
+
+    if (total >= 70) {
+      this.resultadoTexto = `✅ Usted ha Aprobado el Examen con ${total} Puntos`;
+      alert('🎉 Felicitaciones, ha aprobado el examen. Le recomendamos que si conduce en la vía pública aplique estos conocimientos.');
+    } else {
+      this.resultadoTexto = `❌ Usted ha Suspendido este Examen con ${total} Puntos`;
+      alert(`📚 No ha alcanzado los 70 puntos. Obtuvo ${total} puntos. Siga estudiando.`);
+    }
+  }
+
+  revisarExamen(): void {
+    if (this.resultado === null) {
+      this.verResultado();
+    }
+    this.examenRevisado = true;
+  }
+
+  cerrarRevision(): void {
+    this.examenRevisado = false;
+  }
+
+  getPuntajePregunta(preguntaId: number): number {
+    const pregunta = this.preguntas.find(p => p.id === preguntaId);
+    if (pregunta && this.respuestasUsuario[preguntaId] !== undefined &&
+      this.respuestasUsuario[preguntaId] === pregunta.correcta) {
+      return pregunta.valor;
+    }
+    return 0;
+  }
+
+  reiniciarExamen(): void {
+    if (confirm('¿Estás seguro de que deseas reiniciar el examen?')) {
+      this.respuestasUsuario = {};
+      this.resultado = null;
+      this.resultadoTexto = '';
+      this.examenRevisado = false;
+    }
+  }
+
+  onImageError(event: any): void {
+    console.error('Error cargando imagen:', event.target.src);
+    event.target.src = 'assets/images/placeholder.jpg';
+  }
+
+  getLetraRespuesta(index: number): string {
+    return index === 0 ? 'A' : index === 1 ? 'B' : 'C';
+  }
+}
