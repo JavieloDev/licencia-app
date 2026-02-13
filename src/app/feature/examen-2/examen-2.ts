@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
-
-interface Pregunta {
-  id: number;
-  texto: string;
-  opciones: string[];
-  correcta: number;
-  valor: number;
-}
+import {Pregunta} from '../../core/models/pregunta.model';
 
 @Component({
   selector: 'app-examen-2',
@@ -31,7 +24,8 @@ export class Examen2 {
         'De derecha a izquierda.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.1.jpg',
     },
     {
       id: 2,
@@ -42,7 +36,8 @@ export class Examen2 {
         'En ambos sentidos de dirección.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.2.jpg',
     },
     {
       id: 3,
@@ -53,7 +48,8 @@ export class Examen2 {
         'El anochecer hasta el amanecer.'
       ],
       correcta: 2, // Inciso C
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.4.jpg',
     },
     {
       id: 4,
@@ -64,7 +60,8 @@ export class Examen2 {
         'Acceso prohibido.'
       ],
       correcta: 0, // Inciso A
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.3.jpg',
     },
     {
       id: 5,
@@ -75,7 +72,8 @@ export class Examen2 {
         'Dirigir las ruedas motrices.'
       ],
       correcta: 0, // Inciso A
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.5.jpg',
     },
     {
       id: 6,
@@ -86,7 +84,8 @@ export class Examen2 {
         'Circular con precaución y detenerme sólo si tengo que ceder el paso a los vehículos que circulen por la vía transversal.'
       ],
       correcta: 0, // Inciso A
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.7.jpg',
     },
     {
       id: 7,
@@ -97,7 +96,8 @@ export class Examen2 {
         'Vehículos cuyo peso máximo no exceda de 3500 Kg, no comprendiendo las motocicletas.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.6.jpg',
     },
     {
       id: 8,
@@ -108,7 +108,8 @@ export class Examen2 {
         'Disminuir la velocidad.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.8.jpg',
     },
     {
       id: 9,
@@ -119,7 +120,8 @@ export class Examen2 {
         'No, en ningún caso.'
       ],
       correcta: 2, // Inciso C
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.9.jpg',
     },
     {
       id: 10,
@@ -130,7 +132,8 @@ export class Examen2 {
         'No, porque circula a la velocidad máxima establecida en zona urbana.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.10.jpg',
     },
     {
       id: 11,
@@ -141,7 +144,8 @@ export class Examen2 {
         'Sí, solo las de posición para advertir mi presencia.'
       ],
       correcta: 0, // Inciso A
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.11.jpg',
     },
     {
       id: 12,
@@ -152,7 +156,8 @@ export class Examen2 {
         'Disminuir la velocidad.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.12.jpg',
     },
     {
       id: 13,
@@ -163,7 +168,8 @@ export class Examen2 {
         'No, porque debe ser titular de una licencia de categoría "B" y tener 2 años de experiencia en la misma.'
       ],
       correcta: 2, // Inciso C
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.13.jpg',
     },
     {
       id: 14,
@@ -174,7 +180,8 @@ export class Examen2 {
         '150 metros.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.14.jpg',
     },
     {
       id: 15,
@@ -185,7 +192,8 @@ export class Examen2 {
         'Los ciclomotores.'
       ],
       correcta: 2, // Inciso C
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.15.jpg',
     },
     {
       id: 16,
@@ -196,7 +204,8 @@ export class Examen2 {
         'Circular con el fondo color blanco, orla roja y símbolos en negro y rojo.'
       ],
       correcta: 0, // Inciso A
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.16.jpg',
     },
     {
       id: 17,
@@ -207,7 +216,8 @@ export class Examen2 {
         'Es indiferente, siempre que el volante esté firmemente sujeto y la mano derecha libre para utilizar la palanca de cambios.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.17.jpg',
     },
     {
       id: 18,
@@ -218,7 +228,8 @@ export class Examen2 {
         'Portando el permiso de aprendizaje acompañado por un titular de Licencia de Conducción.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.18.jpg',
     },
     {
       id: 19,
@@ -229,7 +240,8 @@ export class Examen2 {
         'Permanecer en el lugar del accidente hasta tanto se presente la administración del organismo.'
       ],
       correcta: 1, // Inciso B
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.19.jpg',
     },
     {
       id: 20,
@@ -240,35 +252,10 @@ export class Examen2 {
         'No trabaje el manómetro del sistema de aire.'
       ],
       correcta: 0, // Inciso A
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-2/2.20.jpg',
     }
   ];
-
-  imagenesApoyo: string[] = [
-    'I0003810.JPG',
-    'I0001820.JPG',
-    'I0005490.jpg',
-    'I0002560.JPG',
-    'I0000280.jpg',
-    'I0003250.JPG',
-    'I0004980.jpg',
-    'I0005980.jpg',
-    'I0005150.jpg',
-    'I0003320.JPG',
-    'I0002140.jpg',
-    'I0003790.jpg',
-    'I0003330.jpg',
-    'I0003750.jpg',
-    'I0007500.jpg',
-    'I0002550.jpg',
-    'I0007100.jpg',
-    'I0007040.jpg'
-  ];
-
-  imagenesIntegradas: { [key: number]: string } = {
-    13: 'I0001920.JPG',
-    20: 'I0006980.jpg'
-  };
 
   resultado: number | null = null;
   resultadoTexto: string = '';

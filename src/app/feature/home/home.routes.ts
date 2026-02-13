@@ -17,6 +17,10 @@ export const routes: Routes = [
     component: Home,
     children: [
       {
+        path: '',
+        component: Examen1,
+      },
+      {
         path: 'examen-1',
         component: Examen1,
       },

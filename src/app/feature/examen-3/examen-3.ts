@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
-
-interface Pregunta {
-  id: number;
-  texto: string;
-  opciones: string[];
-  correcta: number;
-  valor: number;
-}
+import {Pregunta} from '../../core/models/pregunta.model';
 
 @Component({
   selector: 'app-examen-3',
@@ -30,7 +23,8 @@ export class Examen3 {
         'Propulsión total.'
       ],
       correcta: 0, // Inciso A - Propulsión delantera
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.1.jpg'
     },
     {
       id: 2,
@@ -41,7 +35,8 @@ export class Examen3 {
         'Comportamiento del hombre, el vehículo y la vía.'
       ],
       correcta: 2, // Inciso C - Comportamiento del hombre, el vehículo y la vía
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.2.jpg'
     },
     {
       id: 3,
@@ -52,7 +47,8 @@ export class Examen3 {
         'Blanco o amarillo para todos los vehículos.'
       ],
       correcta: 2, // Inciso C - Blanco o amarillo para todos los vehículos
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.3.jpg'
     },
     {
       id: 4,
@@ -63,7 +59,8 @@ export class Examen3 {
         'La proximidad de una zona por la que cruzan frecuentemente animales domésticos o grupos de animales.'
       ],
       correcta: 2, // Inciso C - La proximidad de una zona por la que cruzan frecuentemente animales domésticos o grupos de animales
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.4.jpg'
     },
     {
       id: 5,
@@ -74,7 +71,8 @@ export class Examen3 {
         'Detenerse de la línea de PARE o en la vertical de la señal correspondiente en condiciones de seguridad.'
       ],
       correcta: 2, // Inciso C - Detenerse de la línea de PARE o en la vertical de la señal correspondiente en condiciones de seguridad
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.5.jpg'
     },
     {
       id: 6,
@@ -85,7 +83,8 @@ export class Examen3 {
         'Los amortiguadores.'
       ],
       correcta: 2, // Inciso C - Los amortiguadores
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.6.jpg'
     },
     {
       id: 7,
@@ -96,7 +95,8 @@ export class Examen3 {
         '9.5 metros.'
       ],
       correcta: 1, // Inciso B - 7.2 metros
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.7.jpg'
     },
     {
       id: 8,
@@ -107,7 +107,8 @@ export class Examen3 {
         '5.0 mts/seg.'
       ],
       correcta: 1, // Inciso B - 5.8 mts/seg
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.8.jpg'
     },
     {
       id: 9,
@@ -118,7 +119,8 @@ export class Examen3 {
         '13.5 metros.'
       ],
       correcta: 0, // Inciso A - 11.8 metros
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.9.jpg'
     },
     {
       id: 10,
@@ -129,7 +131,8 @@ export class Examen3 {
         '9.5 metros.'
       ],
       correcta: 2, // Inciso C - 9.5 metros
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.10.jpg'
     },
     {
       id: 11,
@@ -140,7 +143,8 @@ export class Examen3 {
         '13.5 metros.'
       ],
       correcta: 0, // Inciso A - 11.8 metros
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.11.jpg'
     },
     {
       id: 12,
@@ -151,7 +155,8 @@ export class Examen3 {
         '7.5 metros.'
       ],
       correcta: 2, // Inciso C - 7.5 metros
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.12.jpg'
     },
     {
       id: 13,
@@ -162,7 +167,8 @@ export class Examen3 {
         '150 mts.'
       ],
       correcta: 2, // Inciso C - 150 mts
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.13.jpg'
     },
     {
       id: 14,
@@ -173,7 +179,8 @@ export class Examen3 {
         'Las altas o nuevas inscripciones.'
       ],
       correcta: 2, // Inciso C - Las altas o nuevas inscripciones
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.14.jpg'
     },
     {
       id: 15,
@@ -184,7 +191,8 @@ export class Examen3 {
         'Que circula en situación de emergencia.'
       ],
       correcta: 1, // Inciso B - Que va a disminuir la velocidad o parar
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.15.jpg'
     },
     {
       id: 16,
@@ -195,7 +203,8 @@ export class Examen3 {
         'Sólo agua destilada.'
       ],
       correcta: 2, // Inciso C - Sólo agua destilada
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.16.jpg'
     },
     {
       id: 17,
@@ -206,7 +215,8 @@ export class Examen3 {
         'No, se prohíbe en la legislación vigente.'
       ],
       correcta: 2, // Inciso C - No, se prohíbe en la legislación vigente
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.17.jpg'
     },
     {
       id: 18,
@@ -217,7 +227,8 @@ export class Examen3 {
         'No, porque debe ser titular de una licencia de conducción de la categoría B y tener 2 años de experiencia en la misma.'
       ],
       correcta: 2, // Inciso C - No, porque debe ser titular de una licencia de conducción de la categoría B y tener 2 años de experiencia en la misma
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.18.jpg'
     },
     {
       id: 19,
@@ -228,7 +239,8 @@ export class Examen3 {
         ''
       ],
       correcta: 0, // Inciso A - Que los conductores no pueden cruzarla cuando a su lado izquierdo está 1ro. la línea continua
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.19.jpg'
     },
     {
       id: 20,
@@ -239,38 +251,10 @@ export class Examen3 {
         'La cancelación de la licencia de conducción, quienes no podrán optar por una nueva licencia hasta transcurrido un año a partir de la cancelación.'
       ],
       correcta: 1, // Inciso B - La cancelación de la licencia de conducción, quienes no podrán optar por una nueva licencia hasta transcurridos 6 meses a partir de la cancelación
-      valor: 5
+      valor: 5,
+      imagen: 'assets/images/examen-3/3.20.jpg'
     }
   ];
-
-  imagenesApoyo: string[] = [
-    'I0002630.JPG',
-    'I0007580.jpg',
-    'I0001490.jpg',
-    'I0005230.jpg',
-    'I0001170.jpg',
-    'I0000140.jpg',
-    'I0002130.jpg',
-    'I0002780.jpg',
-    'I0002680.jpg',
-    'I0003320.JPG',
-    'I0002480.jpg',
-    'I0003330.jpg',
-    'I0007280.jpg',
-    'I0000261.jpg',
-    'I0002490.jpg',
-    'I0006980.jpg',
-    'I0000250.jpg',
-    'I0008080.jpg',
-    'I0003650.jpg',
-    'I0007550.jpg'
-  ];
-
-  imagenesIntegradas: { [key: number]: string } = {
-    4: 'I0001490.jpg',
-    8: 'I0002480.jpg',
-    13: 'I0007550.jpg'
-  };
 
   resultado: number | null = null;
   resultadoTexto: string = '';

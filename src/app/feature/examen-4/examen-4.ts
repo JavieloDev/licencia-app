@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
-
-interface Pregunta {
-  id: number;
-  texto: string;
-  opciones: string[];
-  correcta: number;
-  valor: number;
-}
+import {Pregunta} from '../../core/models/pregunta.model';
 
 @Component({
   selector: 'app-examen-4',
