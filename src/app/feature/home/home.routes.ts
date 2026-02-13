@@ -60,6 +60,10 @@ export const routes: Routes = [
         path: 'examen-10',
         component: Examen10,
       },
+      {
+        path: '**',
+        redirectTo: '',
+      },
     ],
   },
 ];
